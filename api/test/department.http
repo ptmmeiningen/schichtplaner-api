@@ -1,0 +1,30 @@
+### Departments
+
+# Alle Abteilungen abrufen
+GET http://localhost:8080/api/departments
+
+### Neue Abteilung erstellen
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+    "name": "Entwicklung",
+    "description": "Software Development Team",
+    "color": "#3b82f6"
+}
+
+### Einzelne Abteilung abrufen
+GET http://localhost:8080/api/departments/1
+
+### Abteilung aktualisieren
+PUT http://localhost:8080/api/departments/1
+Content-Type: application/json
+
+{
+    "name": "Development",
+    "description": "Software Development Department",
+    "color": "#2563eb"
+}
+
+### Abteilung löschen
+DELETE http://localhost:8080/api/departments/1

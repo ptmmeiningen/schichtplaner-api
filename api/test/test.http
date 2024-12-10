@@ -1,0 +1,161 @@
+### Admin Login
+POST http://localhost:8080/api/admin/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin123"
+}
+
+### Admins abrufen
+GET http://localhost:8080/api/admin/admins
+
+### Departments
+
+# Alle Abteilungen abrufen
+GET http://localhost:8080/api/departments
+
+### Neue Abteilung erstellen
+POST http://localhost:8080/api/departments
+Content-Type: application/json
+
+{
+    "name": "Entwicklung",
+    "description": "Software Development Team",
+    "color": "#3b82f6"
+}
+
+### Einzelne Abteilung abrufen
+GET http://localhost:8080/api/departments/1
+
+### Abteilung aktualisieren
+PUT http://localhost:8080/api/departments/1
+Content-Type: application/json
+
+{
+    "name": "Development",
+    "description": "Software Development Department",
+    "color": "#2563eb"
+}
+
+### Abteilung löschen
+DELETE http://localhost:8080/api/departments/1
+
+### Employees
+
+# Alle Mitarbeiter abrufen
+GET http://localhost:8080/api/employees
+
+### Neuen Mitarbeiter erstellen
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+    "first_name": "Max",
+    "last_name": "Mustermann",
+    "email": "max@example.com",
+    "password": "secret123",
+    "color": "#3b82f6",
+    "departments": [1, 2]
+}
+
+### Einzelnen Mitarbeiter abrufen
+GET http://localhost:8080/api/employees/1
+
+### Mitarbeiter aktualisieren
+PUT http://localhost:8080/api/employees/1
+Content-Type: application/json
+
+{
+    "first_name": "Maximilian",
+    "last_name": "Mustermann",
+    "email": "maximilian@example.com",
+    "password": "newpassword123",
+    "color": "#2563eb",
+    "departments": [1, 3]
+}
+
+### Mitarbeiter löschen
+DELETE http://localhost:8080/api/employees/1
+
+### ShiftTypes
+
+# Alle Schichttypen abrufen
+GET http://localhost:8080/api/shifttypes
+
+### Neuen Schichttyp erstellen
+POST http://localhost:8080/api/shifttypes
+Content-Type: application/json
+
+{
+    "name": "Frühschicht",
+    "description": "Frühe Schicht von 6-14 Uhr",
+    "start_time": "06:00",
+    "end_time": "14:00",
+    "color": "#3b82f6"
+}
+
+### Einzelnen Schichttyp abrufen
+GET http://localhost:8080/api/shifttypes/1
+
+### Schichttyp aktualisieren
+PUT http://localhost:8080/api/shifttypes/1
+Content-Type: application/json
+
+{
+    "name": "Früh",
+    "description": "Frühschicht 6-14 Uhr",
+    "start_time": "06:00",
+    "end_time": "14:00",
+    "color": "#2563eb"
+}
+
+### Schichttyp löschen
+DELETE http://localhost:8080/api/shifttypes/1
+
+### ShiftTemplates
+
+# Alle Schichtvorlagen abrufen
+GET http://localhost:8080/api/shifttemplates
+
+### Neue Schichtvorlage erstellen
+POST http://localhost:8080/api/shifttemplates
+Content-Type: application/json
+
+{
+    "name": "Standardwoche",
+    "description": "Standard Arbeitswoche",
+    "color": "#3b82f6",
+    "employee_id": 1,
+    "monday": {"shift_type_id": 1},
+    "tuesday": {"shift_type_id": 1},
+    "wednesday": {"shift_type_id": 1},
+    "thursday": {"shift_type_id": 1},
+    "friday": {"shift_type_id": 1},
+    "saturday": {"shift_type_id": 0},
+    "sunday": {"shift_type_id": 0}
+}
+
+### Einzelne Schichtvorlage abrufen
+GET http://localhost:8080/api/shifttemplates/1
+
+### Schichtvorlage aktualisieren
+PUT http://localhost:8080/api/shifttemplates/1
+Content-Type: application/json
+
+{
+    "name": "Flexible Woche",
+    "description": "Flexible Arbeitswoche",
+    "color": "#2563eb",
+    "employee_id": 1,
+    "monday": {"shift_type_id": 1},
+    "tuesday": {"shift_type_id": 2},
+    "wednesday": {"shift_type_id": 1},
+    "thursday": {"shift_type_id": 2},
+    "friday": {"shift_type_id": 1},
+    "saturday": {"shift_type_id": 0},
+    "sunday": {"shift_type_id": 0}
+}
+
+### Schichtvorlage löschen
+DELETE http://localhost:8080/api/shifttemplates/

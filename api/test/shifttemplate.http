@@ -1,0 +1,72 @@
+### ShiftTemplates
+
+# Alle Schichtvorlagen abrufen
+GET http://localhost:8080/api/shifttemplates
+
+### Neue Schichtvorlage erstellen
+POST http://localhost:8080/api/shifttemplates
+Content-Type: application/json
+
+{
+    "name": "Woche 1",
+    "employee_id": 1,
+    "description": "Erste Januarwoche",
+    "monday": {        
+        "shift_type_id": 1
+    },
+    "tuesday": {
+        "shift_type_id": 2
+    },
+    "wednesday": {
+        "shift_type_id": 1
+    },
+    "thursday": {
+        "shift_type_id": 2
+    },
+    "friday": {
+        "shift_type_id": 1
+    },
+    "saturday": {
+        "shift_type_id": 3
+    },
+    "sunday": {
+        "shift_type_id": 3
+    }
+}
+
+### Einzelne Schichtvorlage abrufen
+GET http://localhost:8080/api/shifttemplates/3
+
+### Schichtvorlage aktualisieren
+PUT http://localhost:8080/api/shifttemplates/3
+Content-Type: application/json
+
+{
+    "name": "Woche 1 Update",
+    "employee_id": 1,
+    "description": "Erste Januarwoche aktualisiert",
+    "monday": {
+        "shift_type_id": 2
+    },
+    "tuesday": {
+        "shift_type_id": 1
+    },
+    "wednesday": {
+        "shift_type_id": 2
+    },
+    "thursday": {
+        "shift_type_id": 1
+    },
+    "friday": {
+        "shift_type_id": 2
+    },
+    "saturday": {
+        "shift_type_id": 3
+    },
+    "sunday": {
+        "shift_type_id": 3
+    }
+}
+
+### Schichtvorlage löschen
+DELETE http://localhost:8080/api/shifttemplates/7

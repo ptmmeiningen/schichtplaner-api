@@ -1,0 +1,36 @@
+### Employees
+
+# Alle Mitarbeiter abrufen
+GET http://localhost:8080/api/employees
+
+### Neuen Mitarbeiter erstellen
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+    "first_name": "Max",
+    "last_name": "Mustermann",
+    "email": "max@example.com",
+    "password": "secret123",
+    "color": "#3b82f6",
+    "departments": [1, 2]
+}
+
+### Einzelnen Mitarbeiter abrufen
+GET http://localhost:8080/api/employees/1
+
+### Mitarbeiter aktualisieren
+PUT http://localhost:8080/api/employees/1
+Content-Type: application/json
+
+{
+    "first_name": "Maximilian",
+    "last_name": "Mustermann",
+    "email": "maximilian@example.com",
+    "password": "newpassword123",
+    "color": "#2563eb",
+    "departments": [1, 3]
+}
+
+### Mitarbeiter löschen
+DELETE http://localhost:8080/api/employees/1
